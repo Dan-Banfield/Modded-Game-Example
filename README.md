@@ -23,6 +23,20 @@ Once decompiled, we're interested in two files:
 These can be located at Decompiled\lib\armeabi-v7a and Decompiled\assets\bin\Data\Managed\Metadata respectively.
 
 Next, let's use IL2CPP Dumper GUI to dump the native code.
+//TODO: Add image.
+
+Once dumped, we should now have a folder called "DummyDll." In here, we're interested in the file "Assembly-CSharp." Once this file has been located, open it in dnSpy to see the dumped code.
+//TODO: Add image.
+
+Now, let's look for classes of interest. I found the "Player" class which seems to hold the player's Coins, Stamps and Potions. Let's modify these values!
+//TODO: Add image.
+
+Since we're working with ARMv7, we'll need some ARMv7 hex codes.
+
+ - BA 01 45 E3 1E FF 2F E1 is equal to the value 99857989632.
+
+Now let's force these variables to always return this high value.
+Open HxD
 
 ## Switch to another file
 
